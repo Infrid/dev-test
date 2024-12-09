@@ -35,4 +35,6 @@ return [
         ],
     ],
 
+    'cat_api' => ['base_uri' => env('CAT_URI'), 'key' => env('API_CAT')],
+
 ];
