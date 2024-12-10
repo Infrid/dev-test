@@ -22,6 +22,9 @@ class CatProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        /**
+         * I prefer singleton in this case, since I want one instance where I can control the requests to the API
+         */
         $this->app->singleton(CatService::class, function (Application $app) {
             return new CatService($app['config']->get('services.cat_api.base_uri'), $app['config']->get('services.cat_api.key'));
         });

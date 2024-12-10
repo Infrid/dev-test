@@ -3,10 +3,7 @@
 use App\Http\Controllers\CatController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('dashboard');
-});
-
-Route::get('/miao', [CatController::class, 'breeds']);
-Route::get('/miao/{breedid}', [CatController::class, 'breed']);
+Route::get('/', [CatController::class, 'breeds'])->name('home');
+Route::get('/miao/{breedId}', [CatController::class, 'breed'])->name('miao');
+Route::get('/search', [CatController::class, 'search'])->name('search');
 
